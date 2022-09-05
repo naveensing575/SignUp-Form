@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -19,11 +18,13 @@ function Form() {
   });
 
   const submitForm = (data) => {
-    console.log(data);
+    alert('check your console for the results!')
+    console.log(JSON.stringify(data))
   };
   return (
+  <>
     <div className="Form">
-      <div className="title">Sign Up</div>
+      <div className="title" style={{color: 'cyan'}}>Sign Up</div>
       <div className="inputs">
         <form onSubmit={handleSubmit(submitForm)}>
           <input
@@ -67,7 +68,8 @@ function Form() {
         </form>
       </div>
     </div>
-  );
+    </>
+  )
 }
 
 export default Form;
